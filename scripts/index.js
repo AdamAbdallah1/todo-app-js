@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const deleteIcon = document.createElement("img");
             deleteIcon.src = "../assets/delete-icon.svg";
+            deleteBtn.alt = "Delete";
             deleteIcon.style.width = "20px";
             deleteIcon.style.height = "20px";
 
