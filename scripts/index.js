@@ -10,11 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
             list.appendChild(span);
 
             const deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "Delete";
-            
+            deleteBtn.style.marginLeft = "10px";
+            deleteBtn.style.background = "black"; 
+            deleteBtn.style.border = "none";
+            deleteBtn.style.cursor = "pointer";
+
+            const deleteIcon = document.createElement("img");
+            deleteIcon.src = "../assets/delete-icon.svg";
+            deleteIcon.style.width = "20px";
+            deleteIcon.style.height = "20px";
+
+            deleteBtn.appendChild(deleteIcon);
+
             deleteBtn.addEventListener("click", () => {
                 list.remove();
-            })
+            });
 
             list.appendChild(deleteBtn);
             taskList.appendChild(list);
