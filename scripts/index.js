@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (task) {
             list = document.createElement("li");
             list.textContent = task;
+            deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete"
+            list.appendChild(deleteBtn);
+            
             taskList.appendChild(list);
         }
     })
