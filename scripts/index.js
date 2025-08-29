@@ -41,6 +41,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
             editButton.appendChild(editIcon);
 
+            editButton.addEventListener("click", () => {
+                span.style.display = "none";
+
+                const editInput = document.createElement("input");
+                editInput.type = "text";
+                editInput.value = span.textContent;
+                editInput.style.flex = "1"; 
+
+                list.insertBefore(editInput, controller);
+
+                editInput.focus();
+
+                const saveEdit = () => {
+                    if (editInput.value.trim() !== "") {
+                        span.textContent = editInput.value;
+                    }
+                    span.style.display = "inline";
+                    editInput.remove();
+                };
+
+                editInput.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") saveEdit();
+                });
+
+                editInput.addEventListener("blur", saveEdit);
+            });
+
             document.getElementById("task-input").value = "";
             controller = document.createElement("div");
             controller.style.display = "flex";
