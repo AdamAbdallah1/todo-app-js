@@ -5,8 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
         task = document.getElementById("task-input").value;
         if (task) {
             const list = document.createElement("li");
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.style.marginRight = "10px";
+            
             const span = document.createElement("span");
             span.textContent = task;
+            list.appendChild(checkbox);
             list.appendChild(span);
 
             const deleteBtn = document.createElement("button");
@@ -76,6 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
             controller.appendChild(deleteBtn);
             controller.appendChild(editButton);
             list.appendChild(controller)
+            checkbox.addEventListener("click", () => {
+                if (checkbox.checked) {
+                    span.style.textDecoration = "line-through";
+                    span.style.color = "#888";
+                } else {
+                    span.style.textDecoration = "none";
+                    span.style.color = "#000";
+                }
+
+            })
         }
     })
 })
