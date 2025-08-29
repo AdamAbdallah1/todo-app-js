@@ -4,13 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
         taskList = document.getElementById("task-list");
         task = document.getElementById("task-input").value;
         if (task) {
-            list = document.createElement("li");
-            list.textContent = task;
-            deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "Delete"
-            list.appendChild(deleteBtn);
+            const list = document.createElement("li");
+            const span = document.createElement("span");
+            span.textContent = task;
+            list.appendChild(span);
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
             
+            deleteBtn.addEventListener("click", () => {
+                list.remove();
+            })
+
+            list.appendChild(deleteBtn);
             taskList.appendChild(list);
+
+            document.getElementById("task-input").value = "";
         }
     })
 })
