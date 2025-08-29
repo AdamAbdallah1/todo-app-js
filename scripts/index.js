@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteBtn.style.border = "none";
         deleteBtn.style.cursor = "pointer";
         const deleteIcon = document.createElement("img");
-        deleteIcon.src = "/assets/delete-icon.svg";
+        deleteIcon.src = "assets/delete-icon.svg";
         deleteIcon.style.width = "20px";
         deleteIcon.style.height = "20px";
         deleteBtn.appendChild(deleteIcon);
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         editButton.style.border = "none";
         editButton.style.cursor = "pointer";
         const editIcon = document.createElement("img");
-        editIcon.src = "/assets/edit-icon.png";
+        editIcon.src = "assets/edit-icon.png";
         editIcon.style.width = "20px";
         editIcon.style.height = "20px";
         editButton.appendChild(editIcon);
